@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
+import ParentComponent from "./components/useCallbackHook/ParentComponent";
+import UseMemoComponent from "./components/useMemoHook/UseMemoComponent";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "./redux/slice/userSlice";
+import AccordionWrapper from "./components/accordion/AccordionWrapper";
+import AutoIncrementCounter from "./components/auto-increment-counter/AutoIncrementCounter";
+import { Link, Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Outlet />
+      {/* <ParentComponent /> */}
+      {/* <UseMemoComponent /> */}
+      {/* <AccordionWrapper /> */}
+
+      {/* <AutoIncrementCounter /> */}
     </div>
   );
 }
