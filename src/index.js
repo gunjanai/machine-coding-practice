@@ -10,6 +10,7 @@ import Body from "./components/body/Body";
 import AutoIncrementCounter from "./components/auto-increment-counter/AutoIncrementCounter";
 import AutoComplete from "./components/autocomplete/AutoComplete";
 import Carousel from "./components/carousel/Carousel";
+import CountdownTimer from "./components/countdown-timer/CountdownTimer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/carousel",
         element: <Carousel />,
+      },
+      {
+        path: "/countdown-timer",
+        element: <CountdownTimer />,
       },
     ],
   },

@@ -15,6 +15,10 @@ const routesData = [
     path: "/carousel",
     textToDisplay: "Carousel",
   },
+  {
+    path: "/countdown-timer",
+    textToDisplay: "Countdown-Timer",
+  },
 ];
 
 export default routesData;
