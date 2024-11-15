@@ -11,6 +11,8 @@ import AutoIncrementCounter from "./components/auto-increment-counter/AutoIncrem
 import AutoComplete from "./components/autocomplete/AutoComplete";
 import Carousel from "./components/carousel/Carousel";
 import CountdownTimer from "./components/countdown-timer/CountdownTimer";
+import CustomModal from "./components/custom-modal/CustomModal";
+import InfiniteTable from "./components/infiniteTable/InfiniteTable";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: "/countdown-timer",
         element: <CountdownTimer />,
+      },
+      {
+        path: "/custom-modal",
+        element: <CustomModal />,
+      },
+      {
+        path: "/infinite-table",
+        element: <InfiniteTable />,
       },
     ],
   },

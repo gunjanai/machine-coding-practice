@@ -19,6 +19,14 @@ const routesData = [
     path: "/countdown-timer",
     textToDisplay: "Countdown-Timer",
   },
+  {
+    path: "/custom-modal",
+    textToDisplay: "Custom Modal",
+  },
+  {
+    path: "/infinite-table",
+    textToDisplay: "Infinite Table",
+  },
 ];
 
 export default routesData;

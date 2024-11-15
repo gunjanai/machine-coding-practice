@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const targetDate = new Date("2025-12-12");
+const targetDate = new Date("12-12-2025");
 
 const getTimeRemaining = () => {
   const timeRemaining = targetDate - new Date();
