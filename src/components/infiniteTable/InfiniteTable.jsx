@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import Loader from "../loader/Loader";
 
 function InfiniteTable() {
   const [pageNumber, setPageNumber] = useState(0);
   const [tableData, setTableData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchData(pageNumber);
@@ -26,17 +28,18 @@ function InfiniteTable() {
   };
 
   const fetchData = async (currentPage) => {
+    setLoading(true);
     const res = await fetch(
       `https://dummyjson.com/products?limit=10&skip=${currentPage}`
     );
     const data = await res.json();
-    console.log(data);
     setTableData((prev) => [...prev, ...data?.products]);
+    setLoading(false);
   };
 
-  console.log(tableData);
   return (
     <div>
+      {loading && <Loader />}
       <table className="w-[90%] m-10 bg-teal-700">
         <th className=" text-white text-xl font-bold p-4">id</th>
         <th className=" text-white text-xl font-bold p-4">Name</th>

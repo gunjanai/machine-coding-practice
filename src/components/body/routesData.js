@@ -27,6 +27,10 @@ const routesData = [
     path: "/infinite-table",
     textToDisplay: "Infinite Table",
   },
+  {
+    path: "/loader",
+    textToDisplay: "Loader",
+  },
 ];
 
 export default routesData;

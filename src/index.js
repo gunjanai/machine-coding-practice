@@ -13,6 +13,7 @@ import Carousel from "./components/carousel/Carousel";
 import CountdownTimer from "./components/countdown-timer/CountdownTimer";
 import CustomModal from "./components/custom-modal/CustomModal";
 import InfiniteTable from "./components/infiniteTable/InfiniteTable";
+import Loader from "./components/loader/Loader";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/infinite-table",
         element: <InfiniteTable />,
+      },
+      {
+        path: "/loader",
+        element: <Loader />,
       },
     ],
   },
