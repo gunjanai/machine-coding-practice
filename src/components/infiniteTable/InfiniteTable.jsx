@@ -18,7 +18,7 @@ function InfiniteTable() {
       document.body.scrollHeight - 100
     ) {
       setPageNumber((prev) => {
-        const updatedPageNumber = prev + 40;
+        const updatedPageNumber = prev + 10;
         fetchData(updatedPageNumber);
         return updatedPageNumber;
       });
@@ -27,7 +27,7 @@ function InfiniteTable() {
 
   const fetchData = async (currentPage) => {
     const res = await fetch(
-      `https://dummyjson.com/products?limit=40&skip=${currentPage}`
+      `https://dummyjson.com/products?limit=10&skip=${currentPage}`
     );
     const data = await res.json();
     console.log(data);
@@ -37,17 +37,17 @@ function InfiniteTable() {
   console.log(tableData);
   return (
     <div>
-      <table>
-        <th>id</th>
-        <th>Name</th>
-        <th>Price</th>
+      <table className="w-[90%] m-10 bg-teal-700">
+        <th className=" text-white text-xl font-bold p-4">id</th>
+        <th className=" text-white text-xl font-bold p-4">Name</th>
+        <th className=" text-white text-xl font-bold p-4">Price</th>
 
         {tableData?.map((item) => (
           <>
-            <tr>
-              <td>{item.id}</td>
+            <tr className="bg-gray-200">
+              <td className="py-4">{item.id}</td>
               <td>{item.title}</td>
-              <td>{item.price}</td>
+              <td>$ {item.price}</td>
             </tr>
           </>
         ))}
