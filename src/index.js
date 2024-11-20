@@ -14,6 +14,11 @@ import CountdownTimer from "./components/countdown-timer/CountdownTimer";
 import CustomModal from "./components/custom-modal/CustomModal";
 import InfiniteTable from "./components/infiniteTable/InfiniteTable";
 import Loader from "./components/loader/Loader";
+import ProtectedRoute from "./components/login/ProtectedRoute";
+import Success from "./components/login/Success";
+import Register from "./components/login/Register";
+import Login from "./components/login/Login";
+import SortList from "./components/sortList/SortList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -57,6 +62,26 @@ const router = createBrowserRouter([
       {
         path: "/loader",
         element: <Loader />,
+      },
+      {
+        path: "/login-success",
+        element: (
+          <ProtectedRoute>
+            <Success />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/sort-list",
+        element: <SortList />,
       },
     ],
   },

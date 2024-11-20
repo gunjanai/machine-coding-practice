@@ -31,6 +31,10 @@ const routesData = [
     path: "/loader",
     textToDisplay: "Loader",
   },
+  {
+    path: "/sort-list",
+    textToDisplay: "Sort List",
+  },
 ];
 
 export default routesData;
