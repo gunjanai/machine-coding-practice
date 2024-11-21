@@ -19,6 +19,7 @@ import Success from "./components/login/Success";
 import Register from "./components/login/Register";
 import Login from "./components/login/Login";
 import SortList from "./components/sortList/SortList";
+import StarRating from "./components/starRating/StarRating";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: "/sort-list",
         element: <SortList />,
+      },
+      {
+        path: "/star-rating",
+        element: <StarRating />,
       },
     ],
   },

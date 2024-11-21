@@ -35,6 +35,10 @@ const routesData = [
     path: "/sort-list",
     textToDisplay: "Sort List",
   },
+  {
+    path: "/star-rating",
+    textToDisplay: "Star Rating",
+  },
 ];
 
 export default routesData;
