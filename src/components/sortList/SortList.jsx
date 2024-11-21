@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 function SortList() {
   const [users, setUsers] = useState([]);
-  const [clonedList, setClonedList] = useState([]);
 
   useEffect(() => {
     const loadUserData = async () => {
@@ -10,7 +9,6 @@ function SortList() {
       const json = await res.json();
 
       setUsers(json);
-      setClonedList(json);
     };
 
     loadUserData();
@@ -19,7 +17,24 @@ function SortList() {
   const handleSort = (e) => {
     const btn = e.target.closest("button");
     const sortCol = btn.name;
-    console.log(sortCol);
+    const newList = [...users];
+
+    if (sortCol === "company") {
+      newList.sort((a, b) => {
+        if (a.company.name < b.company.name) return -1;
+        if (a.company.name > b.company.name) return 1;
+        return 0;
+      });
+
+      setUsers(newList);
+    }
+
+    newList.sort((a, b) => {
+      if (a[sortCol] < b[sortCol]) return -1;
+      if (a[sortCol] > b[sortCol]) return 1;
+      return 0;
+    });
+    setUsers(newList);
   };
 
   return (
@@ -89,23 +104,11 @@ function SortList() {
               </div>
             </th>
             <th name="address" className="border p-2 bg-teal-800 text-white">
-              <div className="flex justify-center items-center">
-                Address
-                <button
-                  name="address"
-                  className="cursor-pointer"
-                  onClick={handleSort}
-                >
-                  <div className="flex flex-col ml-4">
-                    <span>˰</span>
-                    <span>˅</span>
-                  </div>
-                </button>
-              </div>
+              <div className="flex justify-center items-center">Address</div>
             </th>
           </tr>
         </thead>
-        {clonedList?.map((user) => (
+        {users?.map((user) => (
           <tr key={user.id}>
             <td className="border p-2">{user.name}</td>
             <td className="border p-2">{user.company.name}</td>
