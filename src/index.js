@@ -20,6 +20,7 @@ import Register from "./components/login/Register";
 import Login from "./components/login/Login";
 import SortList from "./components/sortList/SortList";
 import StarRating from "./components/starRating/StarRating";
+import Table from "./components/table-pagination/Table";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: "/star-rating",
         element: <StarRating />,
+      },
+      {
+        path: "/table-pagination",
+        element: <Table />,
       },
     ],
   },

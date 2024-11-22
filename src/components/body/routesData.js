@@ -39,6 +39,10 @@ const routesData = [
     path: "/star-rating",
     textToDisplay: "Star Rating",
   },
+  {
+    path: "/table-pagination",
+    textToDisplay: "Table with Pagination",
+  },
 ];
 
 export default routesData;
