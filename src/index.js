@@ -21,6 +21,7 @@ import Login from "./components/login/Login";
 import SortList from "./components/sortList/SortList";
 import StarRating from "./components/starRating/StarRating";
 import Table from "./components/table-pagination/Table";
+import Tabs from "./components/tabs/Tabs";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: "/table-pagination",
         element: <Table />,
+      },
+      {
+        path: "/tabs",
+        element: <Tabs />,
       },
     ],
   },

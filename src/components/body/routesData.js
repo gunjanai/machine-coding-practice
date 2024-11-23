@@ -43,6 +43,10 @@ const routesData = [
     path: "/table-pagination",
     textToDisplay: "Table with Pagination",
   },
+  {
+    path: "/tabs",
+    textToDisplay: "Tabs",
+  },
 ];
 
 export default routesData;
