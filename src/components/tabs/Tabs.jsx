@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Table from "../table-pagination/Table";
 import StarRating from "../starRating/StarRating";
-import Accordion from "../accordion/Accordion";
 import AccordionWrapper from "../accordion/AccordionWrapper";
 
 const tabs = ["Table", "Star Rating", "Accordion"];

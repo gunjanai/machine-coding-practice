@@ -22,6 +22,8 @@ import SortList from "./components/sortList/SortList";
 import StarRating from "./components/starRating/StarRating";
 import Table from "./components/table-pagination/Table";
 import Tabs from "./components/tabs/Tabs";
+import Tictactoe from "./components/tic-tac-toe/Tictactoe";
+import TrafficLights from "./components/traffic-lights/TrafficLights";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -97,6 +99,14 @@ const router = createBrowserRouter([
       {
         path: "/tabs",
         element: <Tabs />,
+      },
+      {
+        path: "/tic-tac-toe",
+        element: <Tictactoe />,
+      },
+      {
+        path: "/traffic-lights",
+        element: <TrafficLights />,
       },
     ],
   },

@@ -47,6 +47,14 @@ const routesData = [
     path: "/tabs",
     textToDisplay: "Tabs",
   },
+  {
+    path: "/tic-tac-toe",
+    textToDisplay: "Tic Tac Toe",
+  },
+  {
+    path: "/traffic-lights",
+    textToDisplay: "Traffic Lights",
+  },
 ];
 
 export default routesData;
