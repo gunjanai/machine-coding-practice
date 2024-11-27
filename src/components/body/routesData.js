@@ -55,6 +55,10 @@ const routesData = [
     path: "/traffic-lights",
     textToDisplay: "Traffic Lights",
   },
+  {
+    path: "/tree-view-folder-structure",
+    textToDisplay: "Tree View",
+  },
 ];
 
 export default routesData;

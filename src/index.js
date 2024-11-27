@@ -24,6 +24,8 @@ import Table from "./components/table-pagination/Table";
 import Tabs from "./components/tabs/Tabs";
 import Tictactoe from "./components/tic-tac-toe/Tictactoe";
 import TrafficLights from "./components/traffic-lights/TrafficLights";
+import TreeView from "./components/tree-view/TreeView";
+import { data } from "./components/tree-view/data";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -107,6 +109,10 @@ const router = createBrowserRouter([
       {
         path: "/traffic-lights",
         element: <TrafficLights />,
+      },
+      {
+        path: "/tree-view-folder-structure",
+        element: <TreeView data={data} />,
       },
     ],
   },
