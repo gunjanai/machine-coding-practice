@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import Loader from "../loader/Loader";
 
 function InfiniteTable() {
-  const [pageNumber, setPageNumber] = useState(0);
-  const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [tableData, setTableData] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
 
   useEffect(() => {
     fetchData(pageNumber);
@@ -16,43 +16,45 @@ function InfiniteTable() {
 
   const handleScroll = () => {
     if (
-      window.scrollY + window.innerHeight >=
+      window.scrollY + window.innerHeight >
       document.body.scrollHeight - 100
     ) {
       setPageNumber((prev) => {
-        const updatedPageNumber = prev + 10;
-        fetchData(updatedPageNumber);
-        return updatedPageNumber;
+        const newPage = prev + 1;
+        fetchData(newPage);
+        return newPage;
       });
     }
   };
 
-  const fetchData = async (currentPage) => {
-    setLoading(true);
+  const fetchData = async (pageNumber) => {
+    console.log(pageNumber);
     const res = await fetch(
-      `https://dummyjson.com/products?limit=10&skip=${currentPage}`
+      `https://dummyjson.com/products?limit=10&skip=${pageNumber * 10}`
     );
     const data = await res.json();
-    setTableData((prev) => [...prev, ...data?.products]);
-    setLoading(false);
+
+    setTableData((prevData) => [...prevData, ...data?.products]);
   };
+
+  console.log(tableData);
 
   return (
     <div>
       {loading && <Loader />}
-      <table className="w-[90%] m-10 bg-teal-700">
-        <th className=" text-white text-xl font-bold p-4">id</th>
-        <th className=" text-white text-xl font-bold p-4">Name</th>
-        <th className=" text-white text-xl font-bold p-4">Price</th>
-
-        {tableData?.map((item) => (
-          <>
-            <tr className="bg-gray-200">
-              <td className="py-4">{item.id}</td>
-              <td>{item.title}</td>
-              <td>$ {item.price}</td>
-            </tr>
-          </>
+      <h1 className="">Infinte Scrollable Table</h1>
+      <table>
+        <thead>
+          <th className="text-center">ID</th>
+          <th>Name</th>
+          <th>Price</th>
+        </thead>
+        {tableData?.map((product) => (
+          <tr key={product.id}>
+            <td className="text-center">{product.id}</td>
+            <td>{product.title}</td>
+            <td>$ {product.price}</td>
+          </tr>
         ))}
       </table>
     </div>

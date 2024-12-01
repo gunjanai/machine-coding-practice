@@ -1,16 +1,15 @@
 import React from "react";
 
 function Accordion({ title, description, isOpen, setIsOpen }) {
-  console.log(isOpen);
   return (
     <div className="m-4">
       <div
-        className="bg-gray-300 p-2 text-left"
+        className="bg-teal-800 p-2 text-left text-white"
         onClick={() => setIsOpen((isOpen) => !isOpen)}
       >
         {title}
       </div>
-      {isOpen && <div className="bg-gray-200 p-4 text-left">{description}</div>}
+      {isOpen && <div className="bg-teal-100 p-4 text-left">{description}</div>}
     </div>
   );
 }

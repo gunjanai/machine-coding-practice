@@ -13,7 +13,12 @@ function AutoIncrementCounter() {
     };
   }, []);
 
-  return <>{count}</>;
+  return (
+    <div className="flex flex-col items-center">
+      <h1 className="m-8 text-4xl font-bold">Auto Increment Counter</h1>
+      <span className="text-3xl text-teal-900">{count}</span>
+    </div>
+  );
 }
 
 export default AutoIncrementCounter;

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css or global.css */
+
+h1 {
+  @apply font-bold text-4xl text-[#A77C4C] m-8;
+}
+
+table {
+  @apply w-[90vw] m-auto;
+}
+
+thead {
+  @apply bg-teal-700 text-white text-left sticky top-0;
+}
+
+th {
+  @apply p-4;
+}
+
+td {
+  @apply p-4;
+}

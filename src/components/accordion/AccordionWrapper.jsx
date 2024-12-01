@@ -7,6 +7,7 @@ function AccordionWrapper() {
 
   return (
     <div className="w-screen">
+      <h1 className="font-bold text-4xl m-8">Accordion</h1>
       {questions.map((item) => (
         <Accordion
           key={item.id}
