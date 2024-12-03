@@ -59,6 +59,10 @@ const routesData = [
     path: "/tree-view-folder-structure",
     textToDisplay: "Tree View",
   },
+  {
+    path: "/mortgage-calculator",
+    textToDisplay: "Mortgage Calculator",
+  },
 ];
 
 export default routesData;
